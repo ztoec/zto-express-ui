@@ -24,11 +24,11 @@
   "author": "",
   "husky": {
     "hooks": {
-      "pre-commit": "nano-staged",
+      "pre-commit": "lint-staged",
       "commit-msg": "vant-cli commit-lint"
     }
   },
-  "nano-staged": {
+  "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": "eslint --fix"
   },
   "peerDependencies": {
