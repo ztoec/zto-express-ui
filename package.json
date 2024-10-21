@@ -1,6 +1,6 @@
 {
   "name": "zto-express-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/zto-express-ui.js",
   "module": "es/index.js",

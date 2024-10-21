@@ -38,7 +38,7 @@ module.exports = {
           },
           {
             path: 'pull-refresh',
-            title: 'pull-refresh 下拉刷新',
+            title: 'PullRefresh 下拉刷新',
           },
         ],
       },

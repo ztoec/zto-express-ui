@@ -1,16 +1,16 @@
-# ZeList 列表
+# List 列表
 
 ### 介绍
 
-ZePullRefresh 下拉刷新组件，可与 `ZeList` 组件配合使用实现下拉刷新和上拉加载。
+PullRefresh 下拉刷新组件，可与 `List` 组件配合使用实现下拉刷新和上拉加载。
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { ZePullRefresh, ZeList } from 'zto-express-ui';
+import { PullRefresh, List } from 'zto-express-ui';
 
-Vue.use(ZePullRefresh).use(ZeList);
+Vue.use(PullRefresh).use(List);
 ```
 
 ## 代码演示
@@ -47,7 +47,7 @@ export default {
 
 ### 嵌套用法
 >
-> 与ze-list配合使用实现下拉刷新和上拉加载
+> 与List配合使用实现下拉刷新和上拉加载
 
 ```html
 <template>

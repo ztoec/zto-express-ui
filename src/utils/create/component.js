@@ -6,7 +6,6 @@ function camelize(str) {
 
 function install(Vue) {
   const { name } = this;
-  console.log('🚀 ~ install ~ this:', this);
   Vue.component(name, this);
   Vue.component(camelize('-' + name), this);
 }

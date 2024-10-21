@@ -1,16 +1,16 @@
-# ZeList 列表
+# List 列表
 
 ### 介绍
 
-ZeList 列表组件，包含上拉加载
+List 列表组件，包含上拉加载
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { ZeList } from 'zto-express-ui';
+import { List } from 'zto-express-ui';
 
-Vue.use(ZeList);
+Vue.use(List);
 ```
 
 ## 代码演示

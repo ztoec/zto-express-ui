@@ -1,16 +1,16 @@
-# ZeSteps 步骤条
+# Steps 步骤条
 
 ### 介绍
 
-ZeSteps 是一个步骤条组件，当前仅支持垂直模式
+Steps 是一个步骤条组件，当前仅支持垂直模式
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { ZeSteps, ZeStepItem } from 'zto-express-ui';
+import { Steps, StepItem } from 'zto-express-ui';
 
-Vue.use(ZeSteps).use(ZeStepItem);
+Vue.use(Steps).use(StepItem);
 ```
 
 ## 代码演示
