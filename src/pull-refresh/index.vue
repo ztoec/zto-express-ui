@@ -29,8 +29,9 @@ import { createNamespace } from '../utils/create';
 import { getScrollParent, pxCheck } from '../utils/helper';
 import touchMixin from '../utils/touchMixin';
 
-const [createComponent] = createNamespace('pull-refresh');
-export default createComponent({
+const [ni] = createNamespace('pull-refresh');
+export default {
+  ...ni,
   mixins: [touchMixin],
   model: {
     prop: 'modelValue',
@@ -213,7 +214,7 @@ export default createComponent({
       }, 0);
     },
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>

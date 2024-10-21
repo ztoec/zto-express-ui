@@ -31,8 +31,9 @@ import { createNamespace } from '../utils/create';
 import requestAniFrame from '../utils/raf';
 import { getScrollParent } from '../utils/helper';
 
-const [createComponent] = createNamespace('list');
-export default createComponent({
+const [ni] = createNamespace('list');
+export default {
+  ...ni,
   model: {
     prop: 'modelValue',
     event: 'input',
@@ -179,7 +180,7 @@ export default createComponent({
       }
     },
   },
-});
+};
 </script>
 <style lang="scss">
 .ze-list-loading {

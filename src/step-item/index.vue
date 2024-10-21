@@ -23,8 +23,9 @@
 <script>
 import { createNamespace } from '../utils/create';
 
-const [createComponent] = createNamespace('step-item');
-export default createComponent({
+const [ni] = createNamespace('step-item');
+export default {
+  ...ni,
   props: {
     item: {
       type: Object,
@@ -72,7 +73,7 @@ export default createComponent({
     },
   },
   methods: {},
-});
+};
 </script>
 
 <style lang="scss" scoped>

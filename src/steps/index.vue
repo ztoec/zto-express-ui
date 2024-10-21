@@ -6,8 +6,9 @@
 
 <script>
 import { createNamespace } from '../utils/create';
-const [createComponent] = createNamespace('steps');
-export default createComponent({
+const [ni] = createNamespace('steps');
+export default {
+  ...ni,
   props: {
     active: {
       type: Number,
@@ -18,7 +19,7 @@ export default createComponent({
     return {};
   },
   methods: {},
-});
+};
 </script>
 
 <style lang="scss" scoped>
