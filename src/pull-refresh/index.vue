@@ -25,11 +25,12 @@
 </template>
 
 <script>
+import { createNamespace } from '../utils/create';
 import { getScrollParent, pxCheck } from '../utils/helper';
 import touchMixin from '../utils/touchMixin';
 
-export default {
-  name: 'ze-pull-refresh',
+const [createComponent] = createNamespace('pull-refresh');
+export default createComponent({
   mixins: [touchMixin],
   model: {
     prop: 'modelValue',
@@ -212,7 +213,7 @@ export default {
       }, 0);
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

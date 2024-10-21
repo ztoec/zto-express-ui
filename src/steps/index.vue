@@ -5,8 +5,9 @@
 </template>
 
 <script>
-export default {
-  name: 'ze-steps',
+import { createNamespace } from '../utils/create';
+const [createComponent] = createNamespace('steps');
+export default createComponent({
   props: {
     active: {
       type: Number,
@@ -17,7 +18,7 @@ export default {
     return {};
   },
   methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>

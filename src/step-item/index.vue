@@ -21,8 +21,10 @@
 </template>
 
 <script>
-export default {
-  name: 'ze-step-item',
+import { createNamespace } from '../utils/create';
+
+const [createComponent] = createNamespace('step-item');
+export default createComponent({
   props: {
     item: {
       type: Object,
@@ -70,7 +72,7 @@ export default {
     },
   },
   methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>

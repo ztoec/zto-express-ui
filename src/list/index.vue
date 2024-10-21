@@ -27,11 +27,12 @@
 </template>
 
 <script>
+import { createNamespace } from '../utils/create';
 import requestAniFrame from '../utils/raf';
 import { getScrollParent } from '../utils/helper';
 
-export default {
-  name: 'ze-list',
+const [createComponent] = createNamespace('list');
+export default createComponent({
   model: {
     prop: 'modelValue',
     event: 'input',
@@ -178,7 +179,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 <style lang="scss">
 .ze-list-loading {
