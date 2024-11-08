@@ -1,14 +1,14 @@
 <template>
-  <div class="ze-steps ze-steps--vertical">
+  <div :class="$bem(['vertical'])">
     <slot />
   </div>
 </template>
 
 <script>
 import { createNamespace } from '../utils/create';
-const [ni] = createNamespace('steps');
-export default {
-  ...ni,
+
+const [defineComponent] = createNamespace('steps');
+export default defineComponent({
   props: {
     active: {
       type: Number,
@@ -19,7 +19,7 @@ export default {
     return {};
   },
   methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>

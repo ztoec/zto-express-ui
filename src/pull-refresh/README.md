@@ -51,18 +51,15 @@ export default {
 
 ```html
 <template>
-  <ze-pull-refresh v-model="refresh" @refresh="refreshFun">
-    <ze-list
-      v-model="loading"
-      :has-more="hasMore"
-      @load-more="loadMore"
-      style="height: 250px; overflow: auto"
-    >
-      <div class="test" v-for="(item, index) in sum" :key="index">
-        {{ index }}
-      </div>
+  <div style="height: 250px; overflow: auto">
+    <ze-list v-model="loading" :has-more="hasMore" @load-more="loadMore">
+      <ze-pull-refresh v-model="refresh2" @refresh="refreshFun2">
+        <div class="test" v-for="(item, index) in sum" :key="index">
+          {{ index }}
+        </div>
+      </ze-pull-refresh>
     </ze-list>
-  </ze-pull-refresh>
+  </div>
 </template>
 
 <script>

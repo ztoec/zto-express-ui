@@ -1,17 +1,17 @@
 <template>
-  <div ref="scroller" class="ze-list-loading">
-    <div class="ze-list__container">
+  <div ref="scroller" :class="$bem('loading')">
+    <div :class="$bem('container')">
       <slot></slot>
     </div>
 
-    <div class="ze-list__bottom">
+    <div :class="$bem('bottom')">
       <template v-if="isInfiniting">
-        <div class="ze-list__bottom-box">
+        <div :class="$bem('bottom-box')">
           <slot name="loading">
             <slot name="loading-icon">
               <div class="loader"></div>
             </slot>
-            <div class="ze-list__bottom-box__text">
+            <div :class="$bem('bottom-box__text')">
               {{ loadTxt }}
             </div>
           </slot>
@@ -19,7 +19,7 @@
       </template>
       <template v-else-if="!hasMore">
         <slot name="finished">
-          <div class="ze-list__bottom-tips">{{ loadMoreTxt }}</div>
+          <div :class="$bem('bottom-tips')">{{ loadMoreTxt }}</div>
         </slot>
       </template>
     </div>
@@ -31,9 +31,8 @@ import { createNamespace } from '../utils/create';
 import requestAniFrame from '../utils/raf';
 import { getScrollParent } from '../utils/helper';
 
-const [ni] = createNamespace('list');
-export default {
-  ...ni,
+const [defineComponent] = createNamespace('list');
+export default defineComponent({
   model: {
     prop: 'modelValue',
     event: 'input',
@@ -180,10 +179,10 @@ export default {
       }
     },
   },
-};
+});
 </script>
 <style lang="scss">
-.ze-list-loading {
+.ze-list__loading {
   display: block;
   width: 100%;
   .ze-list__bottom {
@@ -235,7 +234,7 @@ export default {
       }
       .ze-list__bottom-box__text {
         margin-left: 5px;
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }

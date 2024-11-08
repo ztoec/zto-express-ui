@@ -1,25 +1,24 @@
 <template>
   <demo-section style="padding: 0 16px">
-    <demo-block title="基础用法" style="height: 250px; overflow: auto">
-      <ze-pull-refresh v-model="refresh" @refresh="refreshFun">
-        <div class="test" v-for="(item, index) in 20" :key="index">
-          {{ index }}
-        </div>
-      </ze-pull-refresh>
-    </demo-block>
-    <demo-block title="嵌套用法">
-      <ze-pull-refresh v-model="refresh2" @refresh="refreshFun2">
-        <ze-list
-          v-model="loading"
-          :has-more="hasMore"
-          @load-more="loadMore"
-          style="height: 250px; overflow: auto"
-        >
-          <div class="test" v-for="(item, index) in sum" :key="index">
+    <demo-block title="基础用法">
+      <div style="height: 250px; overflow: auto">
+        <ze-pull-refresh v-model="refresh" @refresh="refreshFun">
+          <div class="test" v-for="(item, index) in 20" :key="index">
             {{ index }}
           </div>
+        </ze-pull-refresh>
+      </div>
+    </demo-block>
+    <demo-block title="嵌套用法">
+      <div style="height: 250px; overflow: auto">
+        <ze-list v-model="loading" :has-more="hasMore" @load-more="loadMore">
+          <ze-pull-refresh v-model="refresh2" @refresh="refreshFun2">
+            <div class="test" v-for="(item, index) in sum" :key="index">
+              {{ index }}
+            </div>
+          </ze-pull-refresh>
         </ze-list>
-      </ze-pull-refresh>
+      </div>
     </demo-block>
   </demo-section>
 </template>
@@ -49,12 +48,12 @@ export default {
     refreshFun() {
       setTimeout(() => {
         this.refresh = false;
-      }, 3000);
+      }, 1500);
     },
     refreshFun2() {
       setTimeout(() => {
         this.refresh2 = false;
-      }, 3000);
+      }, 1500);
     },
   },
 };

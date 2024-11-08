@@ -7,10 +7,19 @@
   "style": "lib/index.css",
   "files": [
     "lib",
-    "es"
+    "es",
+    "README.md"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://ztoec.github.io/zto-express-ui/#/home",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ztoec/zto-express-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ztoec/zto-express-ui/issues"
   },
   "scripts": {
     "dev": "vant-cli dev",

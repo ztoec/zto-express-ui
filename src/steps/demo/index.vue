@@ -2,27 +2,19 @@
   <demo-section style="padding: 0 16px">
     <demo-block title="基础用法">
       <ze-steps :active="active1">
-        <ze-step-item
-          v-for="(item, index) in stepList1"
-          :key="index"
-          :item="item"
-        >
-        </ze-step-item>
+        <ze-step v-for="(item, index) in stepList1" :key="index" :item="item">
+        </ze-step>
       </ze-steps>
     </demo-block>
     <demo-block title="使用插槽">
       <ze-steps :active="active1">
-        <ze-step-item
-          v-for="(item, index) in stepList1"
-          :key="index"
-          :item="item"
-        >
+        <ze-step v-for="(item, index) in stepList1" :key="index" :item="item">
           <template slot="title">
             <p class="title">🚀{{ item.title }}</p>
             <p class="time">{{ item.time }}</p>
           </template>
           <div slot="content" v-html="formatHtml(item.content)"></div>
-        </ze-step-item>
+        </ze-step>
       </ze-steps>
     </demo-block>
   </demo-section>

@@ -1,19 +1,19 @@
 <template>
-  <div class="ze-step__item" :class="{ 'ze-step__item--active': isActive }">
-    <div class="ze-step__shape">
-      <div class="ze-step__icon" :class="{ dot: !curStepIcon }">
+  <div :class="$bem('item', { active: isActive })">
+    <div :class="$bem('shape')">
+      <div :class="[$bem('icon'), { dot: !curStepIcon }]">
         <img v-if="curStepIcon" :src="curStepIcon" alt="" />
       </div>
     </div>
 
-    <div class="ze-step__main">
-      <div class="ze-step__title">
+    <div :class="$bem('main')">
+      <div :class="$bem('title')">
         <slot name="title">
           <span class="title">{{ title }}</span>
           <span class="time">{{ time }}</span>
         </slot>
       </div>
-      <div class="ze-step__content">
+      <div :class="$bem('content')">
         <slot name="content">{{ content }}</slot>
       </div>
     </div>
@@ -23,9 +23,8 @@
 <script>
 import { createNamespace } from '../utils/create';
 
-const [ni] = createNamespace('step-item');
-export default {
-  ...ni,
+const [defineComponent] = createNamespace('step');
+export default defineComponent({
   props: {
     item: {
       type: Object,
@@ -73,7 +72,7 @@ export default {
     },
   },
   methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -1,3 +1,5 @@
+import createBEM from './bem';
+
 function camelize(str) {
   return str.replace(/-(\w)/g, function (_, c) {
     return c ? c.toUpperCase() : '';
@@ -11,8 +13,10 @@ function install(Vue) {
 }
 
 export default function createComponent(name) {
-  return {
-    name,
-    install,
+  return function (sfc) {
+    sfc.name = name;
+    sfc.install = install;
+    sfc.methods.$bem = createBEM(name);
+    return sfc;
   };
 }

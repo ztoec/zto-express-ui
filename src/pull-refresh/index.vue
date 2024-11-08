@@ -1,16 +1,16 @@
 <template>
   <div
     ref="scroller"
-    class="ze-pull-refresh"
+    :class="$bem()"
     @touchstart="touchStart"
     @touchmove="touchMove"
     @touchend="touchEnd"
   >
-    <div class="ze-pull-refresh-container" :style="getStyle">
-      <div class="ze-pull-refresh-container-topbox" :style="getHeightStyle">
+    <div :class="$bem('container')" :style="getStyle">
+      <div :class="$bem('status__box')" :style="getHeightStyle">
         <div class="loader" v-if="status == 'loading' && !$slots.loading"></div>
 
-        <div class="ze-pull-refresh-container-topbox-text">
+        <div :class="$bem('status__text')">
           {{ getPullStatus }}
         </div>
 
@@ -29,9 +29,8 @@ import { createNamespace } from '../utils/create';
 import { getScrollParent, pxCheck } from '../utils/helper';
 import touchMixin from '../utils/touchMixin';
 
-const [ni] = createNamespace('pull-refresh');
-export default {
-  ...ni,
+const [defineComponent] = createNamespace('pull-refresh');
+export default defineComponent({
   mixins: [touchMixin],
   model: {
     prop: 'modelValue',
@@ -214,17 +213,17 @@ export default {
       }, 0);
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
 .ze-pull-refresh {
   height: 100%;
   overflow: hidden;
-  .ze-pull-refresh-container {
+  .ze-pull-refresh__container {
     position: relative;
     height: 100%;
-    .ze-pull-refresh-container-topbox {
+    .ze-pull-refresh__status__box {
       position: absolute;
       left: 0;
       width: 100%;
@@ -236,6 +235,7 @@ export default {
       align-items: center;
       justify-content: center;
       .loader {
+        margin-right: 5px;
         width: 14px;
         aspect-ratio: 1;
         display: grid;
@@ -270,8 +270,8 @@ export default {
           transform: rotate(60deg);
         }
       }
-      .ze-pull-refresh-container-topbox-text {
-        font-size: 12px;
+      .ze-pull-refresh__status__text {
+        font-size: 14px;
         color: #c8c8c8;
       }
     }
