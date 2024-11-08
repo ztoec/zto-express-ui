@@ -11,6 +11,12 @@ module.exports = {
   site: {
     title: 'zto-express-ui',
     logo: 'https://life-public-1317992895.cos.ap-shanghai.myqcloud.com/life/bbd9c0b03fae4293ad5916e3887dc2be.png',
+    links: [
+      {
+        logo: './docs/assets/github.svg',
+        url: 'https://github.com/ztoec/zto-express-ui',
+      },
+    ],
     nav: [
       {
         title: '开发指南',
