@@ -8,9 +8,9 @@ Steps 是一个步骤条组件，当前仅支持垂直模式
 
 ```js
 import Vue from 'vue';
-import { Steps, StepItem } from 'zto-express-ui';
+import { Steps, Step } from 'zto-express-ui';
 
-Vue.use(Steps).use(StepItem);
+Vue.use(Steps).use(Step);
 ```
 
 ## 代码演示
@@ -20,12 +20,12 @@ Vue.use(Steps).use(StepItem);
 ```html
 <template>
   <ze-steps :active="active1">
-    <ze-step-item
+    <ze-step
       v-for="(item, index) in stepList1"
       :key="index"
       :item="item"
     >
-    </ze-step-item>
+    </ze-step>
   </ze-steps>
 </template>
 
@@ -91,7 +91,7 @@ export default {
 ```html
 <template>
   <ze-steps :active="active1">
-    <ze-step-item
+    <ze-step
       v-for="(item, index) in stepList1"
       :key="index"
       :item="item"
@@ -101,7 +101,7 @@ export default {
         <p class="time">{{ item.time }}</p>
       </template>
       <div slot="content" v-html="formatHtml(item.content)"></div>
-    </ze-step-item>
+    </ze-step>
   </ze-steps>
 </template>
 
