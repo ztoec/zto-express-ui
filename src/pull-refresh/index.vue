@@ -220,7 +220,7 @@ export default defineComponent({
 .ze-pull-refresh {
   height: 100%;
   overflow: hidden;
-  .ze-pull-refresh__container {
+  &__container {
     position: relative;
     height: 100%;
     .ze-pull-refresh__status__box {
@@ -255,7 +255,7 @@ export default defineComponent({
             )
             50%/100% 8%;
         background-repeat: no-repeat;
-        animation: l23 1s infinite steps(12);
+        animation: ze-rotate 1s infinite steps(12);
         &::before,
         &::after {
           content: '';

@@ -1,0 +1,47 @@
+@use './var' as var;
+@use './mixins/hairline.scss' as mixin;
+
+[class*='ze-hairline'] {
+  &::after {
+    @include mixin.hairline();
+  }
+}
+
+.ze-hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
+  &--top::after {
+    border-top-width: var.$border-width-base;
+  }
+
+  &--left::after {
+    border-left-width: var.$border-width-base;
+  }
+
+  &--right::after {
+    border-right-width: var.$border-width-base;
+  }
+
+  &--bottom::after {
+    border-bottom-width: var.$border-width-base;
+  }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: var.$border-width-base 0;
+    }
+  }
+
+  &--surround::after {
+    border-width: var.$border-width-base;
+  }
+}

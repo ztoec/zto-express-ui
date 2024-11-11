@@ -1,0 +1,13 @@
+@use './mixins/ellipsis.scss' as mixin;
+
+.ze-ellipsis {
+  @include mixin.ellipsis();
+}
+
+.ze-multi-ellipsis--l2 {
+  @include mixin.multi-ellipsis(2);
+}
+
+.ze-multi-ellipsis--l3 {
+  @include mixin.multi-ellipsis(3);
+}

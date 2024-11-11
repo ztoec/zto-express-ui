@@ -182,10 +182,12 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.ze-list__loading {
-  display: block;
-  width: 100%;
-  .ze-list__bottom {
+.ze-list {
+  &__loading {
+    display: block;
+    width: 100%;
+  }
+  &__bottom {
     display: block;
     width: 100%;
     height: 50px;
@@ -193,7 +195,7 @@ export default defineComponent({
     font-size: 12px;
     color: #c8c8c8;
     text-align: center;
-    .ze-list__bottom-box {
+    &-box {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -217,7 +219,7 @@ export default defineComponent({
             )
             50%/100% 8%;
         background-repeat: no-repeat;
-        animation: l23 1s infinite steps(12);
+        animation: ze-rotate 1s infinite steps(12);
         &::before,
         &::after {
           content: '';
@@ -232,16 +234,11 @@ export default defineComponent({
           transform: rotate(60deg);
         }
       }
-      .ze-list__bottom-box__text {
+      &__text {
         margin-left: 5px;
         font-size: 14px;
       }
     }
-  }
-}
-@keyframes l23 {
-  100% {
-    transform: rotate(1turn);
   }
 }
 </style>

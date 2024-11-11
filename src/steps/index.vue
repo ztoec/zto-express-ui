@@ -24,7 +24,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .ze-steps {
-  &.ze-steps--vertical {
+  &--vertical {
   }
 }
 </style>

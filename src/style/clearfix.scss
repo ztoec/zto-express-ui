@@ -1,0 +1,5 @@
+@use './mixins/clearfix.scss' as mixin;
+
+.ze-clearfix {
+  @include mixin.clearfix();
+}
